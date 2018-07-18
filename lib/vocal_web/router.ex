@@ -13,11 +13,13 @@ defmodule VocalWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", VocalWeb do
+  scope "/", VocalWeb
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
     get "/polls", PollController, :index
+    get "/poll/new", PollController, :new
+    post "/polls", PollController, :create
   end
 
   # Other scopes may use custom stacks.

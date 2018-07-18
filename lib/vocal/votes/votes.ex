@@ -10,4 +10,9 @@ defmodule Vocal.Votes do
 
  end
 
+ def new_poll do
+   Poll.changeset(%Poll{}, %{})
+ end
+
+
 end
